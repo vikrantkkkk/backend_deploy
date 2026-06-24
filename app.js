@@ -2,13 +2,9 @@ require("dotenv").config();
 
 const express = require("express");
 const swaggerUi = require("swagger-ui-express");
-
 const { Pool } = require("pg");
-
 const swaggerSpec = require("./swagger");
-
 const { initDb } = require("./db/init");
-
 const usersRouter = require("./routes/users");
 
 const app = express();
