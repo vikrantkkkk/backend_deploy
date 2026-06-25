@@ -21,7 +21,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
 
     ports:
-      - "5432:5432"
+      - "5434:5432"
 
     networks:
       - three-tier-network
@@ -36,6 +36,10 @@ services:
 
     env_file:
       - .env
+
+    environment:
+      DB_HOST: postgres-db
+      DB_PORT: 5432
 
     depends_on:
       postgres-db:
